@@ -1,0 +1,17 @@
+<?php
+include"conDB.php";
+
+$use = $_POST['user'];
+$pass = $_POST['pass'];
+$sex = $_POST['sex'];
+$fav_a = $_POST['fav_a'];
+$fav_b = $_POST['fav_b'];
+$age = $_POST['age'];
+
+
+$fav=$fav_a.",".$fav_b;
+
+$strSQL = "INSERT INTO tb_member VALUES ('$user','$pass','$sex','$fav','$age')";
+mysqli_query($link,$strSQL) or die(mysqli_error($link));
+?>
+<a href="../add_member.html">BACK</a>
